@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/JapanMap.tscn" type="PackedScene" id=4]
+
+[node name="demo_level" type="Spatial"]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.255528, 0.782087, -0.56837, -0.459763, 0.615458, 0.64018, 0.850484, 0.0977315, 0.516842, 0, 23.7924, 0 )
+light_color = Color( 1, 0.866667, 0.741176, 1 )
+light_energy = 3.0
+shadow_enabled = true
+
+[node name="PLAYER" type="Spatial" parent="."]
+transform = Transform( 1.15342, 0, 0, 0, 1.15342, 0, 0, 0, 1.15342, -48.9173, 52.215, -73.0869 )
+
+[node name="Rigidbody" parent="PLAYER" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.8604, 0.137846, 0 )
+
+[node name="ENEMIES" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7329, 53.0312, -82.2239 )
+
+[node name="ENEMY" parent="ENEMIES" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18.0243, 0.0829997, -0.119129 )
+
+[node name="Untitled" parent="." instance=ExtResource( 4 )]
